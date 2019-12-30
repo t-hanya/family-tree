@@ -56,5 +56,3 @@ class Table:
                 children.append(person)
         return tuple(children)
 
-
-
