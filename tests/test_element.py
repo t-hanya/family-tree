@@ -7,6 +7,7 @@ from familytree.person import Person
 from familytree.element import PersonBox
 from familytree.element import SpouseLink
 from familytree.element import ParentChildLink
+from familytree.element import Figure
 
 
 class TestPersonBox:
@@ -45,3 +46,22 @@ class TestParentChildLink:
         link = ParentChildLink(10, 20, 30, 40)
         assert type(link.svg()) == str
 
+
+class TestFigure:
+
+    def test(self):
+
+        class DummyElement:
+            xmin=10
+            ymin=10
+            xmax=20
+            ymax=20
+            person='person'
+
+            def svg(self):
+                return "SOME SVG STRING"
+
+        figure = Figure([DummyElement()])
+        svg = figure.svg()
+        assert type(svg) == str
+        assert "SOME SVG STRING" in svg
