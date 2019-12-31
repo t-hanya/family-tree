@@ -85,3 +85,7 @@ class TestTable:
         table = Table([Person(1, "Name"), Person(2, "Name")])
         assert len(table) == 2
 
+    def test_iter(self):
+        persons = [Person(1, "Name"), Person(2, "Name")]
+        table = Table(persons)
+        assert list(table) == persons

@@ -3,6 +3,7 @@ Person table object.
 """
 
 
+from typing import Generator
 from typing import Optional
 from typing import Sequence
 from typing import Tuple
@@ -18,6 +19,10 @@ class Table:
 
     def __len__(self) -> int:
         return len(self.persons)
+
+    def __iter__(self) -> Generator[Person, None, None]:
+        for p in self.persons:
+            yield p
 
     def get(self, person_id: int) -> Optional[Person]:
         """Get person by person id."""
