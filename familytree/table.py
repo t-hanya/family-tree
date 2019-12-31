@@ -16,6 +16,9 @@ class Table:
     def __init__(self, persons: Sequence[Person]) -> None:
         self.persons = persons
 
+    def __len__(self) -> int:
+        return len(self.persons)
+
     def get(self, person_id: int) -> Optional[Person]:
         """Get person by person id."""
         for person in self.persons:

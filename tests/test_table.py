@@ -10,9 +10,6 @@ from familytree.table import Table
 
 
 class TestTable:
-    # get_spouse
-    # get_children
-    # iteration
 
     def test_get(self):
         table = Table([Person(1, "Name1"), Person(2, "Name2")])
@@ -83,4 +80,8 @@ class TestTable:
         table = Table([person1, person2])
         children = table.find_children(person1, person2)
         assert len(children) == 0
+
+    def test_len(self):
+        table = Table([Person(1, "Name"), Person(2, "Name")])
+        assert len(table) == 2
 
