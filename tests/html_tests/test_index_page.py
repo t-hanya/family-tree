@@ -14,7 +14,5 @@ class TestRenderDetailPage:
         table = Table([Person(1, "Name", "M", spouse_id=2),
                        Person(2, "Name", "F", spouse_id=1)])
         html = render_index_page(table)
-        print(html)
-        assert False
         assert './details/1.html' in html
         assert './details/2.html' in html
